@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="1" width="680" height="560"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box autoresizesSubviews="NO" borderWidth="0.0" title="Pattern Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pAb-Us-Fn8">
+                    <box autoresizesSubviews="NO" wantsLayer="YES" borderWidth="0.0" title="Pattern Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pAb-Us-Fn8">
                         <rect key="frame" x="0.0" y="120" width="680" height="440"/>
                         <view key="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="680" height="440"/>
@@ -32,6 +32,10 @@
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="n8B-lp-xFT"/>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="v56-on-HaM"/>
                                     </constraints>
+                                    <shadow key="shadow" blurRadius="4">
+                                        <size key="offset" width="0.0" height="-1"/>
+                                        <color key="color" white="0.0" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
+                                    </shadow>
                                 </customView>
                             </subviews>
                         </view>
