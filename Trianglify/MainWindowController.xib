@@ -14,15 +14,65 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="680" height="560"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="1" width="680" height="560"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" borderWidth="0.0" title="Pattern Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pAb-Us-Fn8">
+                        <rect key="frame" x="0.0" y="120" width="680" height="440"/>
+                        <view key="contentView">
+                            <rect key="frame" x="0.0" y="0.0" width="680" height="440"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="640" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-BD-uob" customClass="PatternView" customModule="Trianglify" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="20" width="640" height="400"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="n8B-lp-xFT"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="v56-on-HaM"/>
+                                    </constraints>
+                                </customView>
+                            </subviews>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="SbG-BD-uob" secondAttribute="centerY" id="1an-V8-UN6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SbG-BD-uob" secondAttribute="trailing" constant="20" id="3sQ-dG-aZs"/>
+                            <constraint firstItem="SbG-BD-uob" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pAb-Us-Fn8" secondAttribute="leading" constant="20" id="SFC-CI-7rB"/>
+                            <constraint firstAttribute="centerX" secondItem="SbG-BD-uob" secondAttribute="centerX" id="Sp1-ED-SP1"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SbG-BD-uob" secondAttribute="bottom" constant="20" id="ZeV-y8-uAZ"/>
+                            <constraint firstItem="SbG-BD-uob" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pAb-Us-Fn8" secondAttribute="top" constant="20" id="nUO-dg-y8L"/>
+                        </constraints>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.050000000000000003" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" title="Controls Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="KM3-iC-IPm">
+                        <rect key="frame" x="0.0" y="0.0" width="680" height="120"/>
+                        <view key="contentView">
+                            <rect key="frame" x="0.0" y="0.0" width="680" height="120"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="qJ0-tV-NLc"/>
+                        </constraints>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.040000000000000001" colorSpace="calibratedWhite"/>
+                    </box>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="KM3-iC-IPm" secondAttribute="trailing" id="0wv-1c-oZB"/>
+                    <constraint firstItem="pAb-Us-Fn8" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="IEj-jt-M3h"/>
+                    <constraint firstAttribute="bottom" secondItem="KM3-iC-IPm" secondAttribute="bottom" id="IaX-tM-EV0"/>
+                    <constraint firstItem="KM3-iC-IPm" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="JwG-h1-MoI"/>
+                    <constraint firstAttribute="trailing" secondItem="pAb-Us-Fn8" secondAttribute="trailing" id="OnJ-ho-JrE"/>
+                    <constraint firstItem="pAb-Us-Fn8" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="h4F-El-aos"/>
+                    <constraint firstItem="KM3-iC-IPm" firstAttribute="top" secondItem="pAb-Us-Fn8" secondAttribute="bottom" id="z6U-oO-60z"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
+            <point key="canvasLocation" x="295" y="347"/>
         </window>
     </objects>
 </document>
