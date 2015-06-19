@@ -8,12 +8,14 @@
 
 import Cocoa
 
-class PatternView: NSView {
+private var myContext = 0
 
+class PatternView: NSView {
+    
+    // MARK: - Properties
+    
     var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40) {
-        didSet {
-            invalidateIntrinsicContentSize()
-        }
+        didSet { invalidateIntrinsicContentSize() }
     }
     
     // MARK: - Geometry
