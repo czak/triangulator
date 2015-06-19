@@ -11,6 +11,8 @@
 		24271A1F1B34BC0A002B071E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24271A1E1B34BC0A002B071E /* Images.xcassets */; };
 		24271A221B34BC0A002B071E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24271A201B34BC0A002B071E /* MainMenu.xib */; };
 		24271A2E1B34BC0A002B071E /* TrianglifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A2D1B34BC0A002B071E /* TrianglifyTests.swift */; };
+		24271A391B34BC58002B071E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A371B34BC58002B071E /* MainWindowController.swift */; };
+		24271A3A1B34BC58002B071E /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24271A381B34BC58002B071E /* MainWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		24271A271B34BC0A002B071E /* TrianglifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrianglifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24271A2C1B34BC0A002B071E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24271A2D1B34BC0A002B071E /* TrianglifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrianglifyTests.swift; sourceTree = "<group>"; };
+		24271A371B34BC58002B071E /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		24271A381B34BC58002B071E /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				24271A1C1B34BC0A002B071E /* AppDelegate.swift */,
-				24271A1E1B34BC0A002B071E /* Images.xcassets */,
+				24271A371B34BC58002B071E /* MainWindowController.swift */,
+				24271A381B34BC58002B071E /* MainWindowController.xib */,
 				24271A201B34BC0A002B071E /* MainMenu.xib */,
+				24271A1E1B34BC0A002B071E /* Images.xcassets */,
 				24271A1A1B34BC0A002B071E /* Supporting Files */,
 			);
 			path = Trianglify;
@@ -187,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24271A1F1B34BC0A002B071E /* Images.xcassets in Resources */,
+				24271A3A1B34BC58002B071E /* MainWindowController.xib in Resources */,
 				24271A221B34BC0A002B071E /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24271A391B34BC58002B071E /* MainWindowController.swift in Sources */,
 				24271A1D1B34BC0A002B071E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
