@@ -16,6 +16,7 @@ class MainWindowController: NSWindowController {
     
     // MARK: - Properties
     
+    // TODO: KVO instead of didSet?
     var width: CGFloat = 640 {
         didSet { updatePattern() }
     }
@@ -28,8 +29,20 @@ class MainWindowController: NSWindowController {
         didSet { updatePattern() }
     }
     
+    var variance: CGFloat = 0.5 {
+        didSet { updatePattern() }
+    }
+    
+    var palette: String = "Spectral" {
+        didSet { updatePattern() }
+    }
+    
     var pattern: Pattern {
-        return Pattern(width: width, height: height, cellSize: cellSize, variance: 0.5, palette: "RdYlBu")
+        return Pattern(width: width, height: height, cellSize: cellSize, variance: variance, palette: palette)
+    }
+    
+    func updatePattern() {
+        patternView.pattern = pattern
     }
     
     override func setNilValueForKey(key: String) {
@@ -38,10 +51,6 @@ class MainWindowController: NSWindowController {
         case "height": width = 1
         default: super.setNilValueForKey(key)
         }
-    }
-    
-    func updatePattern() {
-        patternView.pattern = pattern
     }
     
     override var windowNibName: String {
