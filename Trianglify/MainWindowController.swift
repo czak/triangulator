@@ -29,7 +29,7 @@ class MainWindowController: NSWindowController {
     }
     
     var pattern: Pattern {
-        return Pattern(width: width, height: height, cellSize: cellSize)
+        return Pattern(width: width, height: height, cellSize: cellSize, variance: 0.5, palette: "RdYlBu")
     }
     
     override func setNilValueForKey(key: String) {

@@ -14,7 +14,7 @@ class PatternView: NSView {
     
     // MARK: - Properties
     
-    var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40) {
+    var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40, variance: 0.5, palette: "RdYlBu") {
         didSet {
             invalidateIntrinsicContentSize()
             needsDisplay = true

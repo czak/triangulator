@@ -12,11 +12,17 @@ struct Pattern {
     var width: CGFloat
     var height: CGFloat
     var cellSize: CGFloat
+    var variance: CGFloat = 0.5
+    var palette: String = "RdYlBu"
     
     var size: CGSize {
         return CGSize(width: width, height: height)
     }
     
+    var rect: CGRect {
+        return NSRect(origin: CGPointZero, size: size)
+    }
+
     var image: NSImage {
         return NSImage(size: size, flipped: false) { imageRect in
             self.draw()
@@ -48,21 +54,53 @@ struct Pattern {
         return rep.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
     }
     
+    func generateGrid() -> [Point] {
+        var vertices: [Point] = []
+        
+        // "Odchyla" współrzędną o maksymalnie variance * cellSize
+        // w lewo lub prawo
+        let variationRange = 2 * variance * cellSize
+        func variation(coordinate: CGFloat) -> CGFloat {
+            let rand = arc4random_uniform(UInt32(variationRange))
+            let offset = CGFloat(rand) - variationRange / 2
+            return coordinate + offset
+        }
+        
+        let margin = cellSize * variance
+        for x in stride(from: -margin, to: size.width + cellSize + margin, by: cellSize) {
+            for y in stride(from: -margin, to: size.height + cellSize + margin, by: cellSize) {
+                vertices.append((
+                    x: Float(variation(x)),
+                    y: Float(variation(y))
+                ))
+            }
+        }
+        
+        return vertices;
+    }
+    
     func draw() {
         let rect = NSRect(origin: CGPointZero, size: size)
         
-        // Red background
-        NSColor.redColor().set()
-        NSBezierPath(rect: rect).fill()
+        let vertices = generateGrid()
+        let triangles = triangulate(vertices)
+        let gradient = gradientFunc(palette)
         
-        // Blue circles
-        NSColor.blueColor().set()
+        NSColor.lightGrayColor().set()
+        NSRectFill(rect)
         
-        for x in stride(from: 0, through: rect.width, by: self.cellSize) {
-            for y in stride(from: 0, through: rect.height, by: self.cellSize) {
-                let rect = NSRect(x: x, y: y, width: self.cellSize, height: self.cellSize)
-                NSBezierPath(ovalInRect: rect).fill()
-            }
+        for (i, j, k) in triangles {
+            let triangleCenter = center(vertices[i], vertices[j], vertices[k])
+            let gradientPoint = scalePoint(triangleCenter, toRect: rect)
+            gradient(gradientPoint).set()
+            
+            let path = NSBezierPath()
+            path.moveToPoint(NSPoint(vertex: vertices[i]))
+            path.lineToPoint(NSPoint(vertex: vertices[j]))
+            path.lineToPoint(NSPoint(vertex: vertices[k]))
+            path.closePath()
+            path.fill()
+            path.stroke()
         }
     }
 }
