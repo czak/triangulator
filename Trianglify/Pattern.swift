@@ -24,6 +24,30 @@ struct Pattern {
         }
     }
     
+    // TODO: Not sure if this should be the responsibility of Pattern.
+    //       Perhaps some PNGRenderer would be prudent.
+    var dataForPNG: NSData? {
+        let rep = NSBitmapImageRep(bitmapDataPlanes: nil,
+            pixelsWide: Int(width),
+            pixelsHigh: Int(height),
+            bitsPerSample: 8,
+            samplesPerPixel: 4,
+            hasAlpha: true,
+            isPlanar: false,
+            colorSpaceName: NSCalibratedRGBColorSpace,
+            bytesPerRow: 0,
+            bitsPerPixel: 0)!
+        
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.setCurrentContext(NSGraphicsContext(bitmapImageRep: rep))
+        
+        draw()
+        
+        NSGraphicsContext.restoreGraphicsState()
+        
+        return rep.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
+    }
+    
     func draw() {
         let rect = NSRect(origin: CGPointZero, size: size)
         

@@ -28,6 +28,10 @@ class MainWindowController: NSWindowController {
         didSet { updatePattern() }
     }
     
+    var pattern: Pattern {
+        return Pattern(width: width, height: height, cellSize: cellSize)
+    }
+    
     override func setNilValueForKey(key: String) {
         switch key {
         case "width": width = 1
@@ -37,15 +41,30 @@ class MainWindowController: NSWindowController {
     }
     
     func updatePattern() {
-        patternView.pattern = Pattern(width: width, height: height, cellSize: cellSize)
+        patternView.pattern = pattern
     }
-        
+    
     override var windowNibName: String {
         return "MainWindowController"
     }
+
+    // MARK: - Saving
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
+    func saveDocument(sender: AnyObject) {
+        let panel = NSSavePanel()
+        panel.allowedFileTypes = ["png"]
+        panel.beginSheetModalForWindow(window!, completionHandler: { button in
+            if button == NSFileHandlingPanelCancelButton { return }
+            
+            if let url = panel.URL, data = self.pattern.dataForPNG {
+                data.writeToURL(url, atomically: true)
+            }
+            else {
+                let alert = NSAlert()
+                alert.messageText = "Unable to save image"
+                alert.beginSheetModalForWindow(self.window!, completionHandler: nil)
+            }
+        })
     }
     
 }
