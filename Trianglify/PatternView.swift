@@ -15,7 +15,10 @@ class PatternView: NSView {
     // MARK: - Properties
     
     var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40) {
-        didSet { invalidateIntrinsicContentSize() }
+        didSet {
+            invalidateIntrinsicContentSize()
+            needsDisplay = true
+        }
     }
     
     // MARK: - Geometry
@@ -52,8 +55,7 @@ class PatternView: NSView {
     // MARK: - Drawing
 
     override func drawRect(dirtyRect: NSRect) {
-        NSColor.blueColor().set()
-        NSBezierPath(rect: bounds).fill()
+        pattern.image.drawInRect(bounds)
     }
     
 }

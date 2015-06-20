@@ -28,10 +28,18 @@ class MainWindowController: NSWindowController {
         didSet { updatePattern() }
     }
     
+    override func setNilValueForKey(key: String) {
+        switch key {
+        case "width": width = 1
+        case "height": width = 1
+        default: super.setNilValueForKey(key)
+        }
+    }
+    
     func updatePattern() {
         patternView.pattern = Pattern(width: width, height: height, cellSize: cellSize)
     }
-    
+        
     override var windowNibName: String {
         return "MainWindowController"
     }
