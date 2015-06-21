@@ -69,12 +69,14 @@ class Pattern: NSObject {
     func generateGrid() -> [NSPoint] {
         var vertices: [NSPoint] = []
         
+        srand(0)
+        
         // "Odchyla" współrzędną o maksymalnie variance * cellSize
         // w lewo lub prawo
-        let variationRange = 2 * variance * cellSize
+        let variationRange = variance * cellSize
         func variation(coordinate: CGFloat) -> CGFloat {
-            let rand = arc4random_uniform(UInt32(variationRange))
-            let offset = CGFloat(rand) - variationRange / 2
+            let random = CGFloat(rand()) / CGFloat(RAND_MAX) - 0.5
+            let offset = random * variationRange
             return coordinate + offset
         }
         
