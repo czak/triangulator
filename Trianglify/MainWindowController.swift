@@ -13,19 +13,23 @@ class MainWindowController: NSWindowController {
     // MARK: - Outlets
     
     @IBOutlet weak var palettePopUpButton: NSPopUpButton!
+    @IBOutlet weak var backgroundView: NSView!
     
     // MARK: - Properties
     
     var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40, variance: 0.5, palette: Palette.defaultPalettes[0])
     
+    // MARK: - Window setup
+    
     override var windowNibName: String {
         return "MainWindowController"
     }
     
-    // MARK: - Window setup
-    
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+        // White background under the image
+        backgroundView.layer!.backgroundColor = CGColorCreateGenericGray(1, 1)
         
         populatePalettesPopup()
     }
