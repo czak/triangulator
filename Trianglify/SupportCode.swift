@@ -12,13 +12,6 @@ public func center(points: NSPoint...) -> NSPoint {
     return NSPoint(x: x, y: y)
 }
 
-//extension NSPoint {
-//    init(vertex: Point) {
-//        x = CGFloat(vertex.x)
-//        y = CGFloat(vertex.y)
-//    }
-//}
-
 // Współrzędne punktu przeskalowane do zakresu 0.0...1.0
 func scalePoint(point: NSPoint, toRect rect: NSRect) -> NSPoint {
     var x = point.x / rect.width
