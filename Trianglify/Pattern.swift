@@ -103,8 +103,8 @@ class Pattern: NSObject {
         NSRectFill(rect)
         
         for (i, j, k) in triangles {
-            let triangleCenter = center(vertices[i], vertices[j], vertices[k])
-            let gradientPoint = scalePoint(triangleCenter, toRect: rect)
+            let triangleCenter = NSPoint.center(vertices[i], vertices[j], vertices[k])
+            let gradientPoint = triangleCenter.normalizedInRect(rect)
             palette.gradient(gradientPoint).set()
             
             let path = NSBezierPath()
