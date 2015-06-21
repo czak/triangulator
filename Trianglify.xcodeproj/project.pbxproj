@@ -17,6 +17,7 @@
 		24271A451B34F19F002B071E /* Delaunay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A411B34F19F002B071E /* Delaunay.swift */; };
 		24271A471B34F19F002B071E /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A431B34F19F002B071E /* NSColor+Hex.swift */; };
 		24271A481B34F19F002B071E /* SupportCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A441B34F19F002B071E /* SupportCode.swift */; };
+		245493C21B373E58008E5DA4 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245493C11B373E58008E5DA4 /* Palette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		24271A411B34F19F002B071E /* Delaunay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delaunay.swift; sourceTree = "<group>"; };
 		24271A431B34F19F002B071E /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		24271A441B34F19F002B071E /* SupportCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportCode.swift; sourceTree = "<group>"; };
+		245493C11B373E58008E5DA4 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				24271A431B34F19F002B071E /* NSColor+Hex.swift */,
 				24271A441B34F19F002B071E /* SupportCode.swift */,
 				24271A371B34BC58002B071E /* MainWindowController.swift */,
+				245493C11B373E58008E5DA4 /* Palette.swift */,
 				24271A3F1B34BEE8002B071E /* Pattern.swift */,
 				24271A381B34BC58002B071E /* MainWindowController.xib */,
 				24271A201B34BC0A002B071E /* MainMenu.xib */,
@@ -230,6 +233,7 @@
 				24271A401B34BEE8002B071E /* Pattern.swift in Sources */,
 				24271A481B34F19F002B071E /* SupportCode.swift in Sources */,
 				24271A451B34F19F002B071E /* Delaunay.swift in Sources */,
+				245493C21B373E58008E5DA4 /* Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

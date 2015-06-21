@@ -12,14 +12,14 @@ class Pattern: NSObject {
     var width: CGFloat
     var height: CGFloat
     var cellSize: CGFloat
-    var variance: CGFloat = 0.5
-    var palette: String = "RdYlBu"
+    var variance: CGFloat
+    dynamic var palette: Palette
     
     class func keyPathsForValuesAffectingImage() -> [String] {
         return ["width", "height", "cellSize", "variance", "palette"]
     }
     
-    init(width: CGFloat, height: CGFloat, cellSize: CGFloat, variance: CGFloat, palette: String) {
+    init(width: CGFloat, height: CGFloat, cellSize: CGFloat, variance: CGFloat, palette: Palette) {
         self.width = width
         self.height = height
         self.cellSize = cellSize
@@ -96,7 +96,6 @@ class Pattern: NSObject {
         
         let vertices = generateGrid()
         let triangles = triangulate(vertices)
-        let gradient = gradientFunc(palette)
         
         NSColor.lightGrayColor().set()
         NSRectFill(rect)
@@ -104,7 +103,7 @@ class Pattern: NSObject {
         for (i, j, k) in triangles {
             let triangleCenter = center(vertices[i], vertices[j], vertices[k])
             let gradientPoint = scalePoint(triangleCenter, toRect: rect)
-            gradient(gradientPoint).set()
+            palette.gradient(gradientPoint).set()
             
             let path = NSBezierPath()
             path.moveToPoint(NSPoint(vertex: vertices[i]))

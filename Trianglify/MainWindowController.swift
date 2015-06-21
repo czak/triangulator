@@ -10,12 +10,42 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var palettePopUpButton: NSPopUpButton!
+    
     // MARK: - Properties
     
-    var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40, variance: 0.5, palette: "Reds")
+    var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40, variance: 0.5, palette: Palette.defaultPalettes[0])
     
     override var windowNibName: String {
         return "MainWindowController"
+    }
+    
+    // MARK: - Window setup
+    
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        
+        populatePalettesPopup()
+    }
+    
+    func populatePalettesPopup() {
+        let menu = palettePopUpButton.menu!
+        
+        for palette in Palette.defaultPalettes {
+            let item = NSMenuItem()
+            item.title = ""
+            item.representedObject = palette
+            item.image = palette.swatchImageForSize(NSSize(width: 140, height: 13))
+            menu.addItem(item)
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func changePalette(sender: NSPopUpButton) {
+        pattern.palette = sender.selectedItem!.representedObject as! Palette
     }
 
     // MARK: - Saving

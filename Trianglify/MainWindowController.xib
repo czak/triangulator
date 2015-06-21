@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="Trianglify" customModuleProvider="target">
             <connections>
+                <outlet property="palettePopUpButton" destination="2Mw-I7-9hY" id="S6c-pF-i0q"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -122,39 +123,17 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-8b-W5B">
-                                <rect key="frame" x="418" y="80" width="236" height="21"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="74" height="18"/>
-                                <size key="intercellSpacing" width="4" height="2"/>
-                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="TMA-fj-8Vp">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <cells>
-                                    <column>
-                                        <buttonCell type="radio" title="Reds" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="ah0-P4-qcf">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </column>
-                                    <column>
-                                        <buttonCell type="radio" title="Spectral" imagePosition="left" alignment="left" inset="2" id="HEh-gX-AGl">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </column>
-                                    <column>
-                                        <buttonCell type="radio" title="RdYlBu" imagePosition="left" alignment="left" inset="2" id="BKV-vh-doh">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </column>
-                                </cells>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Mw-I7-9hY">
+                                <rect key="frame" x="413" y="78" width="186" height="26"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="dIx-We-HqB">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="C6C-e3-aI9"/>
+                                </popUpButtonCell>
                                 <connections>
-                                    <binding destination="-2" name="selectedValue" keyPath="pattern.palette" id="AVV-ab-zPw"/>
+                                    <action selector="changePalette:" target="-2" id="OEy-2N-S53"/>
                                 </connections>
-                            </matrix>
+                            </popUpButton>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="height" constant="120" id="c2X-EA-uXr"/>
@@ -174,7 +153,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="205" y="124"/>
+            <point key="canvasLocation" x="187" y="25"/>
         </window>
     </objects>
 </document>
