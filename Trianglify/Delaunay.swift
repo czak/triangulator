@@ -1,16 +1,15 @@
 import Foundation
 
-let EPSILON: Float = 1.0 / 1048576.0
+let EPSILON: CGFloat = 1.0 / 1048576.0
 
-public typealias Point = (x: Float, y: Float)
 public typealias Triangle = (i: Int, j: Int, k: Int)
-typealias Circumcircle = (i: Int, j: Int, k: Int, x: Float, y: Float, r: Float)
+typealias Circumcircle = (i: Int, j: Int, k: Int, x: CGFloat, y: CGFloat, r: CGFloat)
 
-func supertriangle(vertices: [Point]) -> [Point] {
-    var xmin = Float.infinity,
-    ymin = Float.infinity,
-    xmax = -Float.infinity,
-    ymax = -Float.infinity
+func supertriangle(vertices: [NSPoint]) -> [NSPoint] {
+    var xmin = CGFloat.infinity
+    var ymin = CGFloat.infinity
+    var xmax = -CGFloat.infinity
+    var ymax = -CGFloat.infinity
     
     for vertex in vertices {
         if vertex.x < xmin { xmin = vertex.x }
@@ -26,13 +25,13 @@ func supertriangle(vertices: [Point]) -> [Point] {
     let ymid = ymin + dy * 0.5
     
     return [
-        (x: xmid - 20 * dmax, y: ymid -      dmax),
-        (x: xmid            , y: ymid + 20 * dmax),
-        (x: xmid + 20 * dmax, y: ymid -      dmax)
+        NSPoint(x: xmid - 20 * dmax, y: ymid -      dmax),
+        NSPoint(x: xmid            , y: ymid + 20 * dmax),
+        NSPoint(x: xmid + 20 * dmax, y: ymid -      dmax)
     ]
 }
 
-func circumcircle(vertices: [Point], i: Int, j: Int, k: Int) -> Circumcircle {
+func circumcircle(vertices: [NSPoint], i: Int, j: Int, k: Int) -> Circumcircle {
     let x1 = vertices[i].x,
     y1 = vertices[i].y,
     x2 = vertices[j].x,
@@ -41,7 +40,7 @@ func circumcircle(vertices: [Point], i: Int, j: Int, k: Int) -> Circumcircle {
     y3 = vertices[k].y,
     fabsy1y2 = abs(y1 - y2),
     fabsy2y3 = abs(y2 - y3)
-    var xc, yc, m1, m2, mx1, mx2, my1, my2, dx, dy: Float
+    var xc, yc, m1, m2, mx1, mx2, my1, my2, dx, dy: CGFloat
     
     // Check for coincident points
     if fabsy1y2 < EPSILON && fabsy2y3 < EPSILON {
@@ -112,7 +111,7 @@ func dedup(inout edges: [Int]) {
     }
 }
 
-public func triangulate(var vertices: [Point]) -> [Triangle] {
+public func triangulate(var vertices: [NSPoint]) -> [Triangle] {
     let n = vertices.count
     
     // Za mało punktów do triangulacji

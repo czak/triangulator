@@ -25,9 +25,8 @@ class Palette: NSObject {
         self._gradient = NSGradient(colors: colors)
     }
     
-    // TODO: Replace "Point" with "NSPoint", stat
-    func gradient(point: Point) -> NSColor {
-        return _gradient.interpolatedColorAtLocation(CGFloat(point.x + point.y) / 2)
+    func gradient(point: NSPoint) -> NSColor {
+        return _gradient.interpolatedColorAtLocation((point.x + point.y) / 2)
     }
     
     func swatchImageForSize(size: NSSize) -> NSImage {

@@ -66,8 +66,8 @@ class Pattern: NSObject {
         return rep.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
     }
     
-    func generateGrid() -> [Point] {
-        var vertices: [Point] = []
+    func generateGrid() -> [NSPoint] {
+        var vertices: [NSPoint] = []
         
         // "Odchyla" współrzędną o maksymalnie variance * cellSize
         // w lewo lub prawo
@@ -81,9 +81,9 @@ class Pattern: NSObject {
         let margin = cellSize * variance
         for x in stride(from: -margin, to: size.width + cellSize + margin, by: cellSize) {
             for y in stride(from: -margin, to: size.height + cellSize + margin, by: cellSize) {
-                vertices.append((
-                    x: Float(variation(x)),
-                    y: Float(variation(y))
+                vertices.append(NSPoint(
+                    x: variation(x),
+                    y: variation(y)
                 ))
             }
         }
@@ -106,9 +106,9 @@ class Pattern: NSObject {
             palette.gradient(gradientPoint).set()
             
             let path = NSBezierPath()
-            path.moveToPoint(NSPoint(vertex: vertices[i]))
-            path.lineToPoint(NSPoint(vertex: vertices[j]))
-            path.lineToPoint(NSPoint(vertex: vertices[k]))
+            path.moveToPoint(vertices[i])
+            path.lineToPoint(vertices[j])
+            path.lineToPoint(vertices[k])
             path.closePath()
             path.fill()
             path.stroke()
