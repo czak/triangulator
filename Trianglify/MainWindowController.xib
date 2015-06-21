@@ -17,12 +17,16 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="680" height="560"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
-            <view key="contentView" id="se5-gp-TjO">
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="1" width="680" height="560"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="KeB-rQ-TdL">
                         <rect key="frame" x="20" y="140" width="640" height="400"/>
+                        <shadow key="shadow" blurRadius="3">
+                            <size key="offset" width="0.0" height="-3"/>
+                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                        </shadow>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ttj-fl-bGx"/>
                         <connections>
                             <binding destination="-2" name="value" keyPath="pattern.image" id="3ht-8L-j9W"/>
