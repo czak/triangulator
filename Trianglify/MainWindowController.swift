@@ -37,7 +37,7 @@ class MainWindowController: NSWindowController {
             let item = NSMenuItem()
             item.title = ""
             item.representedObject = palette
-            item.image = palette.swatchImageForSize(NSSize(width: 140, height: 13))
+            item.image = palette.swatchImageForSize(NSSize(width: 110, height: 13))
             menu.addItem(item)
         }
     }
