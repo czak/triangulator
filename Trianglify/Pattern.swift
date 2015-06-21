@@ -8,12 +8,24 @@
 
 import Cocoa
 
-struct Pattern {
+class Pattern: NSObject {
     var width: CGFloat
     var height: CGFloat
     var cellSize: CGFloat
     var variance: CGFloat = 0.5
     var palette: String = "RdYlBu"
+    
+    class func keyPathsForValuesAffectingImage() -> [String] {
+        return ["width", "height", "cellSize", "variance", "palette"]
+    }
+    
+    init(width: CGFloat, height: CGFloat, cellSize: CGFloat, variance: CGFloat, palette: String) {
+        self.width = width
+        self.height = height
+        self.cellSize = cellSize
+        self.variance = variance
+        self.palette = palette
+    }
     
     var size: CGSize {
         return CGSize(width: width, height: height)

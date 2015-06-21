@@ -13,7 +13,6 @@
 		24271A2E1B34BC0A002B071E /* TrianglifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A2D1B34BC0A002B071E /* TrianglifyTests.swift */; };
 		24271A391B34BC58002B071E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A371B34BC58002B071E /* MainWindowController.swift */; };
 		24271A3A1B34BC58002B071E /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24271A381B34BC58002B071E /* MainWindowController.xib */; };
-		24271A3E1B34BEBC002B071E /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A3D1B34BEBC002B071E /* PatternView.swift */; };
 		24271A401B34BEE8002B071E /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A3F1B34BEE8002B071E /* Pattern.swift */; };
 		24271A451B34F19F002B071E /* Delaunay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A411B34F19F002B071E /* Delaunay.swift */; };
 		24271A471B34F19F002B071E /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A431B34F19F002B071E /* NSColor+Hex.swift */; };
@@ -41,7 +40,6 @@
 		24271A2D1B34BC0A002B071E /* TrianglifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrianglifyTests.swift; sourceTree = "<group>"; };
 		24271A371B34BC58002B071E /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		24271A381B34BC58002B071E /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
-		24271A3D1B34BEBC002B071E /* PatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
 		24271A3F1B34BEE8002B071E /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		24271A411B34F19F002B071E /* Delaunay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delaunay.swift; sourceTree = "<group>"; };
 		24271A431B34F19F002B071E /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				24271A441B34F19F002B071E /* SupportCode.swift */,
 				24271A371B34BC58002B071E /* MainWindowController.swift */,
 				24271A3F1B34BEE8002B071E /* Pattern.swift */,
-				24271A3D1B34BEBC002B071E /* PatternView.swift */,
 				24271A381B34BC58002B071E /* MainWindowController.xib */,
 				24271A201B34BC0A002B071E /* MainMenu.xib */,
 				24271A1E1B34BC0A002B071E /* Images.xcassets */,
@@ -232,7 +229,6 @@
 				24271A1D1B34BC0A002B071E /* AppDelegate.swift in Sources */,
 				24271A401B34BEE8002B071E /* Pattern.swift in Sources */,
 				24271A481B34F19F002B071E /* SupportCode.swift in Sources */,
-				24271A3E1B34BEBC002B071E /* PatternView.swift in Sources */,
 				24271A451B34F19F002B071E /* Delaunay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +420,7 @@
 				24271A331B34BC0A002B071E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24271A341B34BC0A002B071E /* Build configuration list for PBXNativeTarget "TrianglifyTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +429,7 @@
 				24271A361B34BC0A002B071E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

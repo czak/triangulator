@@ -10,48 +10,9 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
 
-    // MARK: - Outlets
-    
-    @IBOutlet weak var patternView: PatternView!
-    
     // MARK: - Properties
     
-    // TODO: KVO instead of didSet?
-    var width: CGFloat = 640 {
-        didSet { updatePattern() }
-    }
-    
-    var height: CGFloat = 400 {
-        didSet { updatePattern() }
-    }
-    
-    var cellSize: CGFloat = 40 {
-        didSet { updatePattern() }
-    }
-    
-    var variance: CGFloat = 0.5 {
-        didSet { updatePattern() }
-    }
-    
-    var palette: String = "Spectral" {
-        didSet { updatePattern() }
-    }
-    
-    var pattern: Pattern {
-        return Pattern(width: width, height: height, cellSize: cellSize, variance: variance, palette: palette)
-    }
-    
-    func updatePattern() {
-        patternView.pattern = pattern
-    }
-    
-    override func setNilValueForKey(key: String) {
-        switch key {
-        case "width": width = 1
-        case "height": width = 1
-        default: super.setNilValueForKey(key)
-        }
-    }
+    var pattern: Pattern = Pattern(width: 640, height: 400, cellSize: 40, variance: 0.5, palette: "Reds")
     
     override var windowNibName: String {
         return "MainWindowController"
