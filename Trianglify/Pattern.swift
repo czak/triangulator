@@ -15,6 +15,8 @@ class Pattern: NSObject {
     var variance: CGFloat
     dynamic var palette: Palette
     
+    private var vertices: [NSPoint] = []
+    
     class func keyPathsForValuesAffectingImage() -> [String] {
         return ["width", "height", "cellSize", "variance", "palette"]
     }
@@ -66,8 +68,8 @@ class Pattern: NSObject {
         return rep.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
     }
     
-    func generateGrid() -> [NSPoint] {
-        var vertices: [NSPoint] = []
+    private func generateGrid() {
+        vertices = []
         
         srand(0)
         
@@ -89,14 +91,12 @@ class Pattern: NSObject {
                 ))
             }
         }
-        
-        return vertices;
     }
     
     func draw() {
         let rect = NSRect(origin: CGPointZero, size: size)
         
-        let vertices = generateGrid()
+        generateGrid()
         let triangles = triangulate(vertices)
         
         NSColor.lightGrayColor().set()
