@@ -83,8 +83,8 @@ class Pattern: NSObject {
         }
         
         let margin = cellSize * variance
-        for x in stride(from: -margin, to: size.width + cellSize + margin, by: cellSize) {
-            for y in stride(from: -margin, to: size.height + cellSize + margin, by: cellSize) {
+        for x in (-margin).stride(to: size.width + cellSize + margin, by: cellSize) {
+            for y in (-margin).stride(to: size.height + cellSize + margin, by: cellSize) {
                 vertices.append(NSPoint(
                     x: variation(x),
                     y: variation(y)

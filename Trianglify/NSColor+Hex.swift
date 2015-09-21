@@ -26,7 +26,7 @@ func ** (num: Int, power: Int) -> Int {
 // "abc012" => 0xabc0123
 func parseHexInt(hexString: String) -> Int {
     var result: Int = 0
-    for (pos, char) in enumerate(reverse(hexString)) {
+    for (pos, char) in Array(hexString.characters.reverse()).enumerate() {
         if let digit = digitValues[char] {
             result += digit * 16 ** pos
         }

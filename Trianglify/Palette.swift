@@ -47,7 +47,7 @@ class Palette: NSObject {
     init(name: String, colors: [NSColor]) {
         self.name = name
         self.colors = colors
-        self._gradient = NSGradient(colors: colors)
+        self._gradient = NSGradient(colors: colors)!
     }
     
     func gradient(point: NSPoint) -> NSColor {
@@ -57,7 +57,7 @@ class Palette: NSObject {
     func swatchImageForSize(size: NSSize) -> NSImage {
         return NSImage(size: size, flipped: false) { rect in
             let barWidth = rect.width / CGFloat(self.colors.count)
-            for (i, color) in enumerate(self.colors) {
+            for (i, color) in self.colors.enumerate() {
                 let barRect = NSRect(x: CGFloat(i) * barWidth, y: 0, width: barWidth, height: rect.height)
                 let path = NSBezierPath(rect: barRect)
                 color.set()

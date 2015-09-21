@@ -123,16 +123,16 @@ public func triangulate(var vertices: [NSPoint]) -> [Triangle] {
     // NOTE: Tutaj porównanie moze być do poprawki (<= zamiast <)
     //       Ale to się dopiero okaże
     var indices = Array<Int>(0..<n)
-    indices.sort { vertices[$1].x < vertices[$0].x }
+    indices.sortInPlace { vertices[$1].x < vertices[$0].x }
     
     // Znaleźć "supertriangle"
     // => [[-1900,0],[100,2100],[2100,0]]
     let st = supertriangle(vertices)
-    vertices.extend(st)
+    vertices.appendContentsOf(st)
     
     // Nie wiem jeszcze jakie typy tych tablic
     // => {"i":3,"j":4,"k":5,"x":99.99999999999994,"y":97.6190476190477,"r":4009529.4784580497}
-    var open = [circumcircle(vertices, n + 0, n + 1, n + 2)]
+    var open = [circumcircle(vertices, i: n + 0, j: n + 1, k: n + 2)]
     var closed: [Circumcircle] = []
     var edges: [Int] = []
     
@@ -160,7 +160,7 @@ public func triangulate(var vertices: [NSPoint]) -> [Triangle] {
             
             // Remove the triangle and add it's edges to the edge list.
             // TODO: Tu też można ładniej - najpierw remove, a potem extend
-            edges.extend([
+            edges.appendContentsOf([
                 open[j].i, open[j].j,
                 open[j].j, open[j].k,
                 open[j].k, open[j].i
@@ -175,7 +175,7 @@ public func triangulate(var vertices: [NSPoint]) -> [Triangle] {
         for var j = edges.count; j > 0; {
             let b = edges[--j]
             let a = edges[--j]
-            open.append(circumcircle(vertices, a, b, c))
+            open.append(circumcircle(vertices, i: a, j: b, k: c))
         }
     }
     
