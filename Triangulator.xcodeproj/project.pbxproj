@@ -20,18 +20,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24271A171B34BC0A002B071E /* Trianglify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trianglify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24271A171B34BC0A002B071E /* Triangulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triangulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24271A1B1B34BC0A002B071E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24271A1C1B34BC0A002B071E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24271A1C1B34BC0A002B071E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		24271A1E1B34BC0A002B071E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24271A211B34BC0A002B071E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		24271A371B34BC58002B071E /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		24271A371B34BC58002B071E /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainWindowController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		24271A381B34BC58002B071E /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
-		24271A3F1B34BEE8002B071E /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		24271A3F1B34BEE8002B071E /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Pattern.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		24271A411B34F19F002B071E /* Delaunay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delaunay.swift; sourceTree = "<group>"; };
-		24271A431B34F19F002B071E /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
-		24271A441B34F19F002B071E /* NSPoint+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPoint+Calculations.swift"; sourceTree = "<group>"; };
-		245493C11B373E58008E5DA4 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		24271A431B34F19F002B071E /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "NSColor+Hex.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		24271A441B34F19F002B071E /* NSPoint+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "NSPoint+Calculations.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		245493C11B373E58008E5DA4 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Palette.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 		24271A0E1B34BC0A002B071E = {
 			isa = PBXGroup;
 			children = (
-				24271A191B34BC0A002B071E /* Trianglify */,
+				24271A191B34BC0A002B071E /* Triangulator */,
 				24271A181B34BC0A002B071E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		24271A181B34BC0A002B071E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24271A171B34BC0A002B071E /* Trianglify.app */,
+				24271A171B34BC0A002B071E /* Triangulator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24271A191B34BC0A002B071E /* Trianglify */ = {
+		24271A191B34BC0A002B071E /* Triangulator */ = {
 			isa = PBXGroup;
 			children = (
 				24271A1C1B34BC0A002B071E /* AppDelegate.swift */,
@@ -76,7 +76,7 @@
 				24271A1E1B34BC0A002B071E /* Images.xcassets */,
 				24271A1A1B34BC0A002B071E /* Supporting Files */,
 			);
-			path = Trianglify;
+			path = Triangulator;
 			sourceTree = "<group>";
 		};
 		24271A1A1B34BC0A002B071E /* Supporting Files */ = {
@@ -90,9 +90,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24271A161B34BC0A002B071E /* Trianglify */ = {
+		24271A161B34BC0A002B071E /* Triangulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24271A311B34BC0A002B071E /* Build configuration list for PBXNativeTarget "Trianglify" */;
+			buildConfigurationList = 24271A311B34BC0A002B071E /* Build configuration list for PBXNativeTarget "Triangulator" */;
 			buildPhases = (
 				24271A131B34BC0A002B071E /* Sources */,
 				24271A141B34BC0A002B071E /* Frameworks */,
@@ -102,9 +102,9 @@
 			);
 			dependencies = (
 			);
-			name = Trianglify;
-			productName = Trianglify;
-			productReference = 24271A171B34BC0A002B071E /* Trianglify.app */;
+			name = Triangulator;
+			productName = Triangulator;
+			productReference = 24271A171B34BC0A002B071E /* Triangulator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +123,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 24271A121B34BC0A002B071E /* Build configuration list for PBXProject "Trianglify" */;
+			buildConfigurationList = 24271A121B34BC0A002B071E /* Build configuration list for PBXProject "Triangulator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -136,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24271A161B34BC0A002B071E /* Trianglify */,
+				24271A161B34BC0A002B071E /* Triangulator */,
 			);
 		};
 /* End PBXProject section */
@@ -269,10 +269,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Trianglify/Info.plist;
+				INFOPLIST_FILE = Triangulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pl.czak.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = pl.czak.triangulator;
+				PRODUCT_NAME = Triangulator;
 			};
 			name = Debug;
 		};
@@ -281,17 +281,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Trianglify/Info.plist;
+				INFOPLIST_FILE = Triangulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pl.czak.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = pl.czak.triangulator;
+				PRODUCT_NAME = Triangulator;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24271A121B34BC0A002B071E /* Build configuration list for PBXProject "Trianglify" */ = {
+		24271A121B34BC0A002B071E /* Build configuration list for PBXProject "Triangulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24271A2F1B34BC0A002B071E /* Debug */,
@@ -300,7 +300,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24271A311B34BC0A002B071E /* Build configuration list for PBXNativeTarget "Trianglify" */ = {
+		24271A311B34BC0A002B071E /* Build configuration list for PBXNativeTarget "Triangulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24271A321B34BC0A002B071E /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  Palette.swift
-//  Trianglify
+//  Triangulator
 //
 //  Created by Łukasz Adamczak on 21.06.2015.
 //  Copyright (c) 2015 Łukasz Adamczak. All rights reserved.

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Trianglify.xcodeproj">
+      location = "self:/Users/czak/Projects/trianglify/trianglify-swift/Triangulator.xcodeproj">
    </FileRef>
 </Workspace>
