@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241D21041C16DAAD005C08E1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 241D21031C16DAAD005C08E1 /* LICENSE */; };
 		24271A1D1B34BC0A002B071E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24271A1C1B34BC0A002B071E /* AppDelegate.swift */; };
 		24271A1F1B34BC0A002B071E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24271A1E1B34BC0A002B071E /* Images.xcassets */; };
 		24271A221B34BC0A002B071E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24271A201B34BC0A002B071E /* MainMenu.xib */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241D21031C16DAAD005C08E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		24271A171B34BC0A002B071E /* Triangulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triangulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24271A1B1B34BC0A002B071E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24271A1C1B34BC0A002B071E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -50,6 +52,7 @@
 			children = (
 				24271A191B34BC0A002B071E /* Triangulator */,
 				24271A181B34BC0A002B071E /* Products */,
+				241D21031C16DAAD005C08E1 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +152,7 @@
 			files = (
 				24271A1F1B34BC0A002B071E /* Images.xcassets in Resources */,
 				24271A3A1B34BC58002B071E /* MainWindowController.xib in Resources */,
+				241D21041C16DAAD005C08E1 /* LICENSE in Resources */,
 				24271A221B34BC0A002B071E /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
