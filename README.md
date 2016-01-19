@@ -9,7 +9,7 @@ Triangulator is a Mac OS X desktop app for generating nice polygon-style pattern
 Triangulator is based on [qrohlf/trianglify](https://github.com/qrohlf/trianglify).
 The Delaunay triangulation code is my Swift adaptation of [ironwallaby/delaunay](https://github.com/ironwallaby/delaunay).
 
-# License
+## License
 
 Triangulator is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
